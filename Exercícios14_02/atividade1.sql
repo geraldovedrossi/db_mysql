@@ -48,19 +48,18 @@ INNER JOIN tb_classe ON tb_personagem.id = tb_classe.id
 SET tb_personagem.defesa = tb_personagem.defesa * tb_classe.modDefesa
 WHERE  tb_personagem.id = tb_classe.id;
 
-UPDATE tb_personagem
-INNER JOIN tb_classe ON tb_personagem.id = tb_classe.id
-SET tb_personagem.vida = tb_personagem.vida * tb_classe.modVida
-WHERE  tb_personagem.id = tb_classe.id;
+update tb_personagem inner join tb_classe on tb_personagem.id = tb_classe.id
+set tb_personagem.vida = tb_personagem.vida * tb_classe.modVida where tb_personagem.id = tb_classe.id;
 
 select * from tb_personagem where ataque > 2000;
-select * from tb_personagem where defesa < 2000 AND defesa > 1000;
+select * from tb_personagem where defesa between 1000 and 2000;
 select * from tb_personagem where nome like "C%";
 select * from tb_personagem;
 select * from tb_classe;
 
 
 select * from tb_personagem right join tb_classe on tb_personagem.classe_id = tb_classe.id;
+select * from tb_personagem right join tb_classe on tb_personagem.classe_id = tb_classe.id where classe_id = 1 OR classe_id = 5;
 select * from tb_personagem where classe_id = 1 OR classe_id = 5;
 
   
